@@ -1,0 +1,29 @@
+{
+  "name": "ticketwave-sdk-examples",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Runnable quickstart examples for the TicketWave public API (events, food ordering, bookings). Dependency-free; mirrors @ticketwave/sdk call shapes.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "check": "node --check examples/_shared/client.mjs && node --check examples/01-list-events/index.mjs && node --check examples/02-get-event-with-tiers/index.mjs && node --check examples/03-list-orders/index.mjs && node --check examples/04-food-ordering-access/index.mjs && node --check examples/05-booking-door-decision/index.mjs",
+    "events": "node examples/01-list-events/index.mjs",
+    "event": "node examples/02-get-event-with-tiers/index.mjs",
+    "orders": "node examples/03-list-orders/index.mjs",
+    "food": "node examples/04-food-ordering-access/index.mjs",
+    "door": "node examples/05-booking-door-decision/index.mjs"
+  },
+  "keywords": [
+    "ticketwave",
+    "openapi",
+    "events-api",
+    "food-ordering",
+    "bookings",
+    "access-control",
+    "examples"
+  ],
+  "homepage": "https://ticketwavehq.com",
+  "license": "MIT"
+}

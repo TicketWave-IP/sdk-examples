@@ -1,0 +1,39 @@
+name: Example request or bug
+description: Ask for a new quickstart example, or report one that does not run.
+title: "[example] "
+labels: ["examples"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the TicketWave quickstart examples.
+        For questions about the API contract itself, open an issue on the
+        [openapi-spec](https://github.com/TicketWaveHQ/openapi-spec) repo instead.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is this?
+      options:
+        - Request a new example
+        - An existing example does not run
+        - Docs / README fix
+    validations:
+      required: true
+  - type: input
+    id: endpoint
+    attributes:
+      label: Which endpoint(s)?
+      description: e.g. GET /api/v1/events or POST /api/v2/access/decide
+      placeholder: GET /api/v1/...
+  - type: textarea
+    id: detail
+    attributes:
+      label: Details
+      description: What are you trying to do, and what did you see instead?
+    validations:
+      required: true
+  - type: input
+    id: node
+    attributes:
+      label: Node.js version
+      placeholder: v20.x

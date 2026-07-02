@@ -1,0 +1,32 @@
+name: smoke
+
+# Syntax-checks every example on push and PR. No API key and no network are
+# needed: `node --check` parses each file without executing it, so the repo
+# stays green without ever touching a live tenant or a secret.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ["18", "20", "22"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Syntax-check all examples
+        run: npm run check
