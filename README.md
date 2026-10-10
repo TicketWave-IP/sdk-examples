@@ -7,9 +7,9 @@ stock Node.js and read in under a minute.
 
 TicketWave HQ is white-label commerce for events, food and bookings. This repo
 sits alongside the API contract published at
-[github.com/TicketWaveHQ/openapi-spec](https://github.com/TicketWaveHQ/openapi-spec)
+[github.com/TicketWave-IP/openapi-spec](https://github.com/TicketWave-IP/openapi-spec)
 and shows that contract in motion. For the product itself, see
-[ticketwavehq.com](https://ticketwavehq.com).
+[access.ticketwavehq.com](https://access.ticketwavehq.com).
 
 > These examples are intentionally dependency-free. They call the API with the
 > built-in `fetch` in Node.js 18+, so you can clone and run without an
@@ -59,7 +59,7 @@ you can watch the raw HTTP traffic before writing any code.
 
 - **Node.js 18 or newer** (for the global `fetch`). Check with `node -v`.
 - A **TicketWave API key**. Issue one at
-  [ticketwavehq.com/dashboard/settings/api-keys](https://ticketwavehq.com/dashboard/settings/api-keys).
+  [access.ticketwavehq.com/dashboard/settings/api-keys](https://access.ticketwavehq.com/dashboard/settings/api-keys).
   Live keys look like `tw_live_xxxxxxxxxxxxxxxx`.
 
 No other tooling. There is nothing to install.
@@ -153,10 +153,10 @@ ACTOR_ID=<uuid-of-the-booking-holder> node examples/05-booking-door-decision/ind
 
 The single source of truth for every field, enum, and status code used here is
 the OpenAPI 3.1 document at
-[github.com/TicketWaveHQ/openapi-spec](https://github.com/TicketWaveHQ/openapi-spec).
+[github.com/TicketWave-IP/openapi-spec](https://github.com/TicketWave-IP/openapi-spec).
 Each example file names the exact `operationId` it exercises in its header
 comment, so you can jump straight from an example to the matching operation in
-[`openapi.yaml`](https://github.com/TicketWaveHQ/openapi-spec/blob/main/openapi.yaml).
+[`openapi.yaml`](https://github.com/TicketWave-IP/openapi-spec/blob/main/openapi.yaml).
 
 | Example | operationId in the spec | Namespace |
 |---------|-------------------------|-----------|
@@ -197,7 +197,7 @@ Authorization: Bearer tw_live_xxxxxxxxxxxxxxxx
 ```
 
 Issue and rotate keys at
-[ticketwavehq.com/dashboard/settings/api-keys](https://ticketwavehq.com/dashboard/settings/api-keys).
+[access.ticketwavehq.com/dashboard/settings/api-keys](https://access.ticketwavehq.com/dashboard/settings/api-keys).
 Scopes decide what a key can do:
 
 | Scope | Grants |
@@ -232,14 +232,14 @@ const decision = await tw.access.decide({ actorId, resourceId, trustMode: "hybri
 ```
 
 Because the SDK and this repo are both generated from
-[the same spec](https://github.com/TicketWaveHQ/openapi-spec), the method names
+[the same spec](https://github.com/TicketWave-IP/openapi-spec), the method names
 line up with the `operationId`s referenced above. Confirm the current published
 version and install instructions on the npm registry before pinning it in a
 production project.
 
 If you need a client in another language, generate one directly from the spec
 with the OpenAPI Generator, as documented in the
-[openapi-spec README](https://github.com/TicketWaveHQ/openapi-spec#how-to-consume-it).
+[openapi-spec README](https://github.com/TicketWave-IP/openapi-spec#how-to-consume-it).
 
 ---
 
@@ -294,21 +294,21 @@ shown here. Please keep three rules:
 1. **Dependency-free.** Standard-library Node.js only, so `git clone` then run.
 2. **One idea per example.** Small enough to read in a minute.
 3. **Cite the spec.** Name the `operationId` in the header comment and link to
-   [openapi-spec](https://github.com/TicketWaveHQ/openapi-spec).
+   [openapi-spec](https://github.com/TicketWave-IP/openapi-spec).
 
 `npm run check` syntax-checks every example and runs in CI on Node 18, 20, and
 22. For questions about the API contract itself (a wrong field, a missing enum
 value), open an issue on the
-[openapi-spec](https://github.com/TicketWaveHQ/openapi-spec) repo rather than
+[openapi-spec](https://github.com/TicketWave-IP/openapi-spec) repo rather than
 here.
 
 ---
 
 ## Related repositories
 
-- **[TicketWaveHQ/openapi-spec](https://github.com/TicketWaveHQ/openapi-spec)** - the canonical OpenAPI 3.1 contract these examples run against.
-- **[TicketWave HQ on GitHub](https://github.com/TicketWaveHQ)** - the rest of the organisation.
-- **[ticketwavehq.com](https://ticketwavehq.com)** - the product: white-label commerce for events, food and bookings.
+- **[TicketWave-IP/openapi-spec](https://github.com/TicketWave-IP/openapi-spec)** - the canonical OpenAPI 3.1 contract these examples run against.
+- **[TicketWave HQ on GitHub](https://github.com/TicketWaveHQ)** - the company that operates TicketWave.
+- **[access.ticketwavehq.com](https://access.ticketwavehq.com)** - the product: white-label commerce for events, food and bookings.
 
 ---
 
